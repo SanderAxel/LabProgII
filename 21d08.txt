@@ -1,0 +1,106 @@
+
+
+
+
+package clase3;
+
+import java.util.concurrent.TimeUnit;
+
+public class Tiempo {
+
+	public static void main(String[] args) throws InterruptedException
+	{
+		// TODO Auto-generated method stub
+		long starTime = System.nanoTime();
+		System.out.println("Hello Word!");
+		for(int i=1;i<10000;i++){
+			System.out.print((int)(Math.random()*10+1));
+		}
+		long endTime = System.nanoTime();
+		long timeElapsed=endTime - starTime;
+		
+		System.out.println("\n Execution time in nanoseconds: "+timeElapsed);
+		System.out.println("Execution time in milliseconds: "+timeElapsed/1000000);
+
+
+	}
+
+}
+----------------------------------------------------------------
+package clase3;
+
+import java.util.concurrent.TimeUnit;
+
+public class millis {
+
+	public static void main(String[] args) throws InterruptedException
+	{
+		long starTime = System.currentTimeMillis();
+		
+		for(int i=1; i<10000;i++){
+			System.out.print((int)(Math.random()*10+1));
+		}
+		
+		long endTime =  System.currentTimeMillis();
+		
+		long timeElapsed = endTime -starTime;
+		
+		System.out.println("Execution time in milliseconds: "+timeElapsed);
+		
+	}
+
+}
+----------------------------------------------------------------
+package clase3;
+
+import java.time.Instant;
+import java.util.concurrent.TimeUnit;
+
+public class now {
+
+	public static void main(String[] args) throws InterruptedException
+	{
+		// TODO Auto-generated method stub
+		long starTime = Instant.now().toEpochMilli();
+		
+		TimeUnit.SECONDS.sleep(5);
+		
+		long endTime = Instant.now().toEpochMilli();
+		
+		long timeElapsed = endTime -starTime;
+		
+		System.out.println("Execution time in milliseconds: "+timeElapsed);
+		
+	}
+
+}
+----------------------------------------------------------------
+package clase3;
+
+import java.time.Duration;
+import java.time.Instant;
+import java.util.concurrent.TimeUnit;
+//import static java.time.temporal.ChronoUnit.SECONDS;
+
+public class now2 {
+
+	public static void main(String[] args) throws InterruptedException
+	{
+		// TODO Auto-generated method stub
+		Instant start = Instant.now();
+		
+		TimeUnit.SECONDS.sleep(5);
+		
+		Instant end= Instant.now();
+		
+		Duration interval = Duration.between(start, end);
+		
+		System.out.println("Execution time in seconds: "+interval.getSeconds());
+		
+	}
+
+}
+
+----------------------------------------------------------------
+
+----------------------------------------------------------------
