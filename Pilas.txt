@@ -1,0 +1,86 @@
+package Ejem_I;
+
+import java.util.Stack;
+
+public class stack {
+	public static void llenar(Stack<Integer> a, int n){
+		
+		for(int i=1;i<=n;i++ ){
+			a.push(Leer.datoInt());
+		}
+		
+	}
+	public static void vaciar(Stack<Integer> a, Stack<Integer> b){
+		while(!a.empty()){
+			b.push(a.pop());
+		}
+	}
+	public static void mpoi(Stack<Integer> a){ // X
+		int x,c=0,y;
+		
+		//Stack<Integer> aux = new Stack<Integer>();
+		
+		for(int i=1;i<=a.pop();i++ ){
+			x = a.peek();
+			if ( x%2==0){
+				c = c+1;
+				y = a.pop();
+				
+				//aux.push(y);
+			}
+			x=x-1;
+		}
+		System.out.println("Pares encontrados en z:"+c);
+		//System.out.println(aux);
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Stack<Integer> A = new Stack<Integer>();
+		llenar(A,Leer.datoInt());
+		/*A.push();
+		//A.push("bb");
+		//A.push("cc");
+		//A.push("dd");
+		A.push("ee");*/
+		System.out.println(A);
+		//System.out.println(A.pop());
+		//System.out.println(A);
+		//System.out.println(A.peek());
+		//System.out.println(A);
+		Stack<Integer> Z = new Stack<Integer>();
+		vaciar(A,Z);
+		System.out.println(A);
+		System.out.println(Z);
+		//mpoi(Z); X
+		
+		
+		// contar los pares e impares de Z
+		
+		int c1,c2;
+		c1=0;c2=0;
+		while(!Z.empty()){
+			int x=Z.pop();
+			if(x%2==0){
+				c1++;
+				A.push(x);
+			}
+			else{ 
+				c2++; 
+				//Z.push(x);
+			}
+			
+			
+		}
+		System.out.println(c1+" "+c2);
+		System.out.println("Pares sacados de Z y llevados a A: "+A);
+		System.out.println("Z: "+Z);
+
+
+	}
+
+}
+
+
+------------------------------------------
+
