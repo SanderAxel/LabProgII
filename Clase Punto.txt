@@ -1,0 +1,43 @@
+public class Punto {
+
+    private
+            float x;
+            float y;
+
+    public Punto(float x, float y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    public Punto() {
+    }
+    
+    
+
+    public float getX() {
+        return x;
+    }
+
+    public void setX(float x) {
+        this.x = x;
+    }
+
+    public float getY() {
+        return y;
+    }
+
+    public void setY(float y) {
+        this.y = y;
+    }
+    
+    public void coord_cartesianas(){
+        System.out.println("Coordenadas (" + x +", "+y+")");
+    }
+    public void coord_polares(){
+        
+    }
+    /**public void toString(){
+        
+    }**/
+    
+}
